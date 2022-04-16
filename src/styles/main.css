@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(79, 1, 180);
+}
+
+.paddle {
+    --position: 50;
+
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.671);
+    top: calc(var(--position) * 1vh);
+    transform: translateY(-50%);
+    width: 2vh;
+    height: 20vh;
+    border-radius: 20px;
+}
+
+.paddle.left {
+    left: 1vw;
+}
+
+.paddle.right {
+    right: 1vw;
+}
+
+.ball {
+    --x: 50;
+    --y: 50;
+
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.781);
+    left: calc(var(--x) * 1vw);
+    top: calc(var(--y) * 1vh);
+    transform: translate(-50%, -50%);
+    width: 6vh;
+    height: 6vh;
+    border-radius: 50%;
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 7vh;
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    opacity: .5;
+}
+
+.score > * {
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 2vh;
+    margin: 0 10vh;
+}
+.score > :first-child {
+    text-align: right;
+}
